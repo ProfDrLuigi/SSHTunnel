@@ -12,7 +12,6 @@
 		0232C0CC0EED63E500D85580 /* SecurityFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0232C0CB0EED63E500D85580 /* SecurityFoundation.framework */; };
 		0236404F0E24FAAA007271F1 /* AMServerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0236404E0E24FAAA007271F1 /* AMServerViewController.m */; };
 		023645080E256FC1007271F1 /* AMSessionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 023645070E256FC1007271F1 /* AMSessionViewController.m */; };
-		02376AE10E23C0790058B22A /* AMAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02376ADF0E23C0790058B22A /* AMAccountViewController.m */; };
 		023B9C4B0DF9AEF700C07FD9 /* RemoveKeyCommand.sh in Resources */ = {isa = PBXBuildFile; fileRef = 023B9C4A0DF9AEF700C07FD9 /* RemoveKeyCommand.sh */; };
 		024491740E608A8F00D92725 /* sessions.sst in Resources */ = {isa = PBXBuildFile; fileRef = 024491730E608A8F00D92725 /* sessions.sst */; };
 		02452E9C0DF6D1CD00119375 /* SSHCommand.sh in Resources */ = {isa = PBXBuildFile; fileRef = 02452E9B0DF6D1CD00119375 /* SSHCommand.sh */; };
@@ -62,8 +61,6 @@
 		0236404E0E24FAAA007271F1 /* AMServerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMServerViewController.m; sourceTree = "<group>"; };
 		023645060E256FC1007271F1 /* AMSessionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMSessionViewController.h; sourceTree = "<group>"; };
 		023645070E256FC1007271F1 /* AMSessionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMSessionViewController.m; sourceTree = "<group>"; };
-		02376ADF0E23C0790058B22A /* AMAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMAccountViewController.m; sourceTree = "<group>"; };
-		02376AE00E23C0790058B22A /* AMAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMAccountViewController.h; sourceTree = "<group>"; };
 		023B9C4A0DF9AEF700C07FD9 /* RemoveKeyCommand.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = RemoveKeyCommand.sh; sourceTree = "<group>"; };
 		024491730E608A8F00D92725 /* sessions.sst */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = sessions.sst; sourceTree = "<group>"; };
 		02452E9B0DF6D1CD00119375 /* SSHCommand.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = SSHCommand.sh; sourceTree = "<group>"; };
@@ -173,7 +170,6 @@
 				02B118CE0E30C7CC003886A7 /* ServiceController */,
 				023645030E256F3F007271F1 /* SessionView */,
 				023643C00E256109007271F1 /* ServerView */,
-				02376AE20E23C0820058B22A /* AccountView */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -196,15 +192,6 @@
 				02B10F670E5DE0E200715AE4 /* AMTreeController.m */,
 			);
 			name = SessionView;
-			sourceTree = "<group>";
-		};
-		02376AE20E23C0820058B22A /* AccountView */ = {
-			isa = PBXGroup;
-			children = (
-				02376AE00E23C0790058B22A /* AMAccountViewController.h */,
-				02376ADF0E23C0790058B22A /* AMAccountViewController.m */,
-			);
-			name = AccountView;
 			sourceTree = "<group>";
 		};
 		02534A900E60530B006310FA /* AMNetworkServicesChooser */ = {
@@ -522,7 +509,6 @@
 				0274BB310DF43A9F00C09AEE /* AMSession.m in Sources */,
 				DDB56A221C188A86002301B5 /* AMResourcesHelper.m in Sources */,
 				0282BB430E09BA680006BA62 /* AMServer.m in Sources */,
-				02376AE10E23C0790058B22A /* AMAccountViewController.m in Sources */,
 				0236404F0E24FAAA007271F1 /* AMServerViewController.m in Sources */,
 				023645080E256FC1007271F1 /* AMSessionViewController.m in Sources */,
 				029BE6970E27FF990099093A /* AMWindow.m in Sources */,

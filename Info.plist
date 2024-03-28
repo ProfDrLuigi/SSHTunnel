@@ -26,5 +26,13 @@
 	<string>NSApplication</string>
 	<key>NSUIElement</key>
 	<string>0</string>
+	<key>SUAllowsAutomaticUpdates</key>
+	<true/>
+	<key>SUEnableSystemProfiling</key>
+	<true/>
+	<key>SUFeedURL</key>
+	<string>https://wired.istation.pw/wiredclient/appcast.xml</string>
+	<key>SUPublicEDKey</key>
+	<string>IocWX96bR2E4UoPBgFT3KVRVWbut/1HjJVrfChE6l+s=</string>
 </dict>
 </plist>

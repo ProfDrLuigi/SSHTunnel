@@ -91,7 +91,6 @@
 - (void) resetAndRestart;
 - (void) executeKillAllSSH:(NSAlert *)alert returnCode:(int)returnCode contextInfo:(void *)contextInfo;
 - (void) setAnimationsTypes;
-- (void) checkNewVersionOnServerFromUser:(BOOL)userRequest;
 - (BOOL) stopAllOtherRunningGlobalProxy;
 - (void) performAutostart;
 - (void) prepareStatusBarMenu;

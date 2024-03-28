@@ -70,9 +70,6 @@
 	[preferencesController addObserver:self forKeyPath:@"values.useGraphicalEffects" options:NSKeyValueObservingOptionNew context:nil];
 	
 	[self setAnimationsTypes];
-
-	if ([[NSUserDefaults standardUserDefaults] boolForKey:@"checkForNewVersion"] == YES)
-		[self checkNewVersionOnServerFromUser:NO];
 	
     // This should be performed after other ui elements have had time to finish
     // what they are doing.  Therefore, it is called after a small delay
@@ -155,36 +152,6 @@
 		[t setArguments:[NSArray arrayWithObject:@"ssh"]];
 		[t launch];
 	}
-}
-
-- (void) checkNewVersionOnServerFromUser:(BOOL)userRequest
-{
-	NSLog(@"Checking for new version of the programm on internet");
-	
-	NSString *currentVersion		= [[[NSBundle mainBundle] infoDictionary] valueForKey:@"CFBundleVersion"];
-	NSDictionary *serverVersion		= [NSDictionary dictionaryWithContentsOfURL:[NSURL URLWithString:@"http://antoinemercadal.fr/updates/sshtunnel/versions.plist"]];
-	NSNumber *currentMajorVersion	= [NSNumber numberWithInt:[[[currentVersion  componentsSeparatedByString:@"."] objectAtIndex:0] intValue]];
-	NSNumber *currentMinorVersion	= [NSNumber numberWithInt:[[[currentVersion  componentsSeparatedByString:@"."] objectAtIndex:1] intValue]];
-	NSNumber *remoteMajorVersion	= [NSNumber numberWithInt:[[serverVersion objectForKey:@"Major"] intValue]];
-	NSNumber *remoteMinorVersion	= [NSNumber numberWithInt:[[serverVersion objectForKey:@"Minor"] intValue]];
-	
-	if (([currentMajorVersion intValue] < [remoteMajorVersion intValue]) 
-		|| ( ([currentMajorVersion intValue] == [remoteMajorVersion intValue]) 
-			&& ([currentMinorVersion intValue] < [remoteMinorVersion intValue])))
-	{
-		int resp = NSRunAlertPanel([NSString stringWithFormat:@"New version %@.%@ is out!", 
-									remoteMajorVersion, remoteMinorVersion],
-                                   @"%@",
-								   @"Download Version", 
-								   @"Ignore",
-                                   [serverVersion valueForKey:@"Changes"],
-								   nil);
-		
-		if (resp == NSAlertDefaultReturn)
-			[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:[serverVersion objectForKey:@"DownloadURL"]]];
-	}
-	else if (userRequest)
-		NSRunAlertPanel(@"Version Checker", @"You copy of SSHTunnel is actually up-to-date",  @"OK", nil, nil);
 }
 
 - (BOOL) stopAllOtherRunningGlobalProxy
@@ -370,11 +337,6 @@
 - (IBAction) openSessionInSafari:(id)sender
 {
 	[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:[@"http://" stringByAppendingString:[sender title]]]];
-}
-
-- (IBAction) checkForNewVersion:(id)sender
-{
-	[self checkNewVersionOnServerFromUser:YES];
 }
 
 - (IBAction) openMainWindow:(id)sender

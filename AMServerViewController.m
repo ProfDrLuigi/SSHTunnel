@@ -45,7 +45,8 @@
 	}
 	@catch (NSException *e) 
 	{
-		int rep = NSRunAlertPanel(@"Error while loading datas", @"SSHTunnel was unable to load its saved state. Would you like to revert to the factory presets ? ", @"Yes", @"No", nil);
+        int rep = NSRunAlertPanel(NSLocalizedString(@"Error while loading datas", @"Alert title"), NSLocalizedString(@"SSHTunnel was unable to load its saved state. Would you like to revert to the factory presets?", @"Alert message"), NSLocalizedString(@"Yes", @"Yes button"), NSLocalizedString(@"No", @"No button"), nil);
+
 		if (rep == NSAlertDefaultReturn)
 			[[NSNotificationCenter defaultCenter] postNotificationName:AMErrorLoadingSavedState object:nil];
 		else

@@ -461,7 +461,8 @@
 			[[NSNotificationCenter defaultCenter] postNotificationName:AMNewErrorMessage 
 																object:[@"Unknown error for session " 
 																		stringByAppendingString:[self sessionName]]];
-			NSRunAlertPanel(@"Error while connecting", @"Unknown error as occured while connecting." , @"Ok", nil, nil);
+            NSRunAlertPanel(NSLocalizedString(@"Error while connecting", @"Alert title"), NSLocalizedString(@"Unknown error has occurred while connecting.", @"Alert message"), NSLocalizedString(@"Ok", @"Ok button"), nil, nil);
+
 		}
 		else if ([checkWrongPass evaluateWithObject:outputContent] == YES)
 		{
@@ -474,7 +475,8 @@
 			[[NSNotificationCenter defaultCenter] postNotificationName:AMNewErrorMessage
 																object:[@"Wrong server password for session "
 																		stringByAppendingString:[self sessionName]]];
-			NSRunAlertPanel(@"Error while connecting", @"The password or username set for the server are wrong" , @"Ok", nil, nil);
+            NSRunAlertPanel(NSLocalizedString(@"Error while connecting", @"Alert title"), NSLocalizedString(@"The password or username set for the server are wrong.", @"Alert message"), NSLocalizedString(@"Ok", @"Ok button"), nil, nil);
+
 		}
 		else if ([checkRefused evaluateWithObject:outputContent] == YES)
 		{
@@ -488,7 +490,8 @@
 			[[NSNotificationCenter defaultCenter] postNotificationName:AMNewErrorMessage
 																object:[@"Connection has been refused by server for session "
 																		stringByAppendingString:[self sessionName]]];
-			NSRunAlertPanel(@"Error while connecting", @"Connection has been rejected by the server." , @"Ok", nil, nil);
+            NSRunAlertPanel(NSLocalizedString(@"Error while connecting", @"Alert title"), NSLocalizedString(@"Connection has been rejected by the server.", @"Alert message"), NSLocalizedString(@"Ok", @"Ok button"), nil, nil);
+
 		}		
 		else if ([checkPort evaluateWithObject:outputContent] == YES)
 		{
@@ -502,7 +505,8 @@
 			[[NSNotificationCenter defaultCenter] postNotificationName:AMNewErrorMessage
 																object:[@"Wrong server port for session " 
 																		stringByAppendingString:[self sessionName]]];
-			NSRunAlertPanel(@"Error while connecting", @"The port is already in used on server." , @"Ok", nil, nil);
+            NSRunAlertPanel(NSLocalizedString(@"Error while connecting", @"Alert title"), NSLocalizedString(@"The port is already in use on the server.", @"Alert message"), NSLocalizedString(@"Ok", @"Ok button"), nil, nil);
+
 		}
 		else if ([checkConnected evaluateWithObject:outputContent] == YES || [checkLoggedIn evaluateWithObject:outputContent] == YES)
 		{

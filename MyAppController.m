@@ -160,7 +160,8 @@
 	{
 		if (([o connected] || [o connectionInProgress] ) && ([o sessionTunnelType] == AMSessionGlobalProxy))
 		{
-			int r = NSRunAlertPanel(@"Global Proxy", @"The global proxy session is in execution. Only one global proxy can ran. Would you like to stop it ?", @"OK", @"Cancel", nil);
+            int r = NSRunAlertPanel(NSLocalizedString(@"Global Proxy", @"Alert title"), NSLocalizedString(@"The global proxy session is currently running. Only one global proxy can run at a time. Would you like to stop it?", @"Alert message"), NSLocalizedString(@"OK", @"OK button"), NSLocalizedString(@"Cancel", @"Cancel button"), nil);
+
 		
 			if (r == NSAlertAlternateReturn)
 				return NO;
@@ -262,7 +263,8 @@
 
 - (IBAction) resetApplicationSupportFolder:(id)sender
 {
-	int rep = NSRunAlertPanel(@"Reset factory presets", @"Are you really sure you want to reset the factory presets ? Note you have to relaunch application.", @"Yes", @"No", nil);
+    int rep = NSRunAlertPanel(NSLocalizedString(@"Reset factory presets", @"Alert title"), NSLocalizedString(@"Are you really sure you want to reset the factory presets? Note that you have to relaunch the application.", @"Alert message"), NSLocalizedString(@"Yes", @"Yes button"), NSLocalizedString(@"No", @"No button"), nil);
+
 	
 	if (rep == NSAlertDefaultReturn)
 	{
@@ -351,7 +353,8 @@
 
 - (IBAction) applyCurrentServerToAllSessions:(id)sender
 {
-	int rep = NSRunAlertPanel(@"Apply current server to all sessions", @"You are going to set the server as the selected one to every sessions. Are you sure ?", @"Yes", @"no", nil);
+    int rep = NSRunAlertPanel(NSLocalizedString(@"Apply current server to all sessions", @"Alert title"), NSLocalizedString(@"You are going to set the server as the selected one to every session. Are you sure?", @"Alert message"), NSLocalizedString(@"Yes", @"Yes button"), NSLocalizedString(@"No", @"No button"), nil);
+
 	
 	if (rep == NSAlertDefaultReturn)
 	{

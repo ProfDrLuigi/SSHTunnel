@@ -118,7 +118,7 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <clipView key="contentView" drawsBackground="NO" id="lK1-Fy-c2g">
                                 <rect key="frame" x="0.0" y="0.0" width="647" height="283"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
                                     <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" columnSelection="YES" multipleSelection="NO" emptySelection="NO" autosaveName="sessionsListTab" rowHeight="20" headerView="3029" indentationPerLevel="14" autosaveExpandedItems="YES" autoresizesOutlineColumn="YES" outlineTableColumn="2910" id="2908">
                                         <rect key="frame" x="0.0" y="0.0" width="647" height="260"/>
@@ -239,7 +239,7 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <clipView key="contentView" drawsBackground="NO" id="cDR-ec-HOQ">
                                         <rect key="frame" x="0.0" y="0.0" width="175" height="284"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <autoresizingMask key="autoresizingMask"/>
                                         <subviews>
                                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" columnSelection="YES" multipleSelection="NO" emptySelection="NO" autosaveName="serversView" headerView="2667" id="1374">
                                                 <rect key="frame" x="0.0" y="0.0" width="175" height="261"/>
@@ -780,7 +780,7 @@
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <clipView key="contentView" drawsBackground="NO" id="1BC-g7-iKd">
                         <rect key="frame" x="1" y="1" width="645" height="288"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" alternatingRowBackgroundColors="YES" columnReordering="NO" columnSelection="YES" multipleSelection="NO" autosaveName="serviceView" headerView="2455" id="2240">
                                 <rect key="frame" x="0.0" y="0.0" width="645" height="265"/>

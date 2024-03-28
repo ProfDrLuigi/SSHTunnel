@@ -306,10 +306,10 @@
 
 - (IBAction) killAllSSH:(id)sender
 {
-	[mainApplicationWindow runSheetAlertTitle:NSLocalizedString(@"KILLALLSSH_TITLE", nil) 
-									  message:NSLocalizedString(@"KILLALLSSH_MESSAGE", nil)
+	[mainApplicationWindow runSheetAlertTitle:NSLocalizedString(@"Kill all SSH", nil) 
+									  message:NSLocalizedString(@"You are going to shut down all ssh sessions, even ones that are not managed by SSHTunnel.  Are you sure?", nil)
 								  firstButton:NSLocalizedString(@"OK", nil)
-								 secondButton:NSLocalizedString(@"CANCEL", nil)
+								 secondButton:NSLocalizedString(@"Cancel", nil)
 										 from:self
 									 selector:(@"executeKillAllSSH:returnCode:contextInfo:")];
 }

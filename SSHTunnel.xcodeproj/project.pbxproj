@@ -9,12 +9,10 @@
 /* Begin PBXBuildFile section */
 		02116C280E5A262B000D52B3 /* AMSwitchButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 02116C270E5A262B000D52B3 /* AMSwitchButton.m */; };
 		022082A90E268E69004F2B5A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 022082A70E268E69004F2B5A /* Localizable.strings */; };
-		0221D4B20DF54930002AB57B /* app.icns.disabled in Resources */ = {isa = PBXBuildFile; fileRef = 0221D4B10DF54930002AB57B /* app.icns.disabled */; };
 		0232C0CC0EED63E500D85580 /* SecurityFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0232C0CB0EED63E500D85580 /* SecurityFoundation.framework */; };
 		0236404F0E24FAAA007271F1 /* AMServerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0236404E0E24FAAA007271F1 /* AMServerViewController.m */; };
 		023645080E256FC1007271F1 /* AMSessionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 023645070E256FC1007271F1 /* AMSessionViewController.m */; };
 		02376AE10E23C0790058B22A /* AMAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02376ADF0E23C0790058B22A /* AMAccountViewController.m */; };
-		02376B4F0E23C4AD0058B22A /* createAbornetAccount.sh in Resources */ = {isa = PBXBuildFile; fileRef = 02376B4E0E23C4AD0058B22A /* createAbornetAccount.sh */; };
 		023B9C4B0DF9AEF700C07FD9 /* RemoveKeyCommand.sh in Resources */ = {isa = PBXBuildFile; fileRef = 023B9C4A0DF9AEF700C07FD9 /* RemoveKeyCommand.sh */; };
 		024491740E608A8F00D92725 /* sessions.sst in Resources */ = {isa = PBXBuildFile; fileRef = 024491730E608A8F00D92725 /* sessions.sst */; };
 		02452E9C0DF6D1CD00119375 /* SSHCommand.sh in Resources */ = {isa = PBXBuildFile; fileRef = 02452E9B0DF6D1CD00119375 /* SSHCommand.sh */; };
@@ -29,10 +27,6 @@
 		029BE6970E27FF990099093A /* AMWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 029BE6960E27FF990099093A /* AMWindow.m */; };
 		029BE6D40E2803610099093A /* AMBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 029BE6D20E2803610099093A /* AMBaseViewController.m */; };
 		029BE79F0E280D6B0099093A /* AMPopUpButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 029BE79E0E280D6B0099093A /* AMPopUpButton.m */; };
-		029BE7DC0E28143E0099093A /* serversAccounts.plist in Resources */ = {isa = PBXBuildFile; fileRef = 029BE7DB0E28143E0099093A /* serversAccounts.plist */; };
-		029C395C0E5F989D009B7688 /* COPYING.txt in Resources */ = {isa = PBXBuildFile; fileRef = 029C395B0E5F989D009B7688 /* COPYING.txt */; };
-		029C395F0E5F98D6009B7688 /* AUTHORS.txt in Resources */ = {isa = PBXBuildFile; fileRef = 029C395D0E5F98D6009B7688 /* AUTHORS.txt */; };
-		029C39600E5F98D6009B7688 /* CHANGELOG.txt in Resources */ = {isa = PBXBuildFile; fileRef = 029C395E0E5F98D6009B7688 /* CHANGELOG.txt */; };
 		029C39A60E5F9B92009B7688 /* SSHTunnelWorkaround in Resources */ = {isa = PBXBuildFile; fileRef = 029C399A0E5F9B92009B7688 /* SSHTunnelWorkaround */; };
 		02AF86EA0E5C9AA200DD6F70 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 022082820E268CE6004F2B5A /* MainMenu.xib */; };
 		02B10F680E5DE0E200715AE4 /* AMTreeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02B10F670E5DE0E200715AE4 /* AMTreeController.m */; };
@@ -43,6 +37,15 @@
 		02CC7A430E5CD236007AE08D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02CC7A420E5CD236007AE08D /* Security.framework */; };
 		02F375720E5F0D5B00F23038 /* SSHShell.command in Resources */ = {isa = PBXBuildFile; fileRef = 02F375710E5F0D5B00F23038 /* SSHShell.command */; };
 		2A42E2A32BB5578000D40D7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A42E2A22BB5578000D40D7D /* Assets.xcassets */; };
+		2A73F3372BB56813007FE4A8 /* statusGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A73F32E2BB56813007FE4A8 /* statusGreen.png */; };
+		2A73F3382BB56813007FE4A8 /* statusGreen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A73F32F2BB56813007FE4A8 /* statusGreen@2x.png */; };
+		2A73F3392BB56813007FE4A8 /* statusOrange@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A73F3302BB56813007FE4A8 /* statusOrange@3x.png */; };
+		2A73F33A2BB56813007FE4A8 /* statusGreen@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A73F3312BB56813007FE4A8 /* statusGreen@3x.png */; };
+		2A73F33B2BB56813007FE4A8 /* statusOrange.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A73F3322BB56813007FE4A8 /* statusOrange.png */; };
+		2A73F33C2BB56813007FE4A8 /* statusRed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A73F3332BB56813007FE4A8 /* statusRed@2x.png */; };
+		2A73F33D2BB56813007FE4A8 /* statusRed@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A73F3342BB56813007FE4A8 /* statusRed@3x.png */; };
+		2A73F33E2BB56813007FE4A8 /* statusOrange@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A73F3352BB56813007FE4A8 /* statusOrange@2x.png */; };
+		2A73F33F2BB56813007FE4A8 /* statusRed.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A73F3362BB56813007FE4A8 /* statusRed.png */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -53,7 +56,6 @@
 		02116C260E5A262B000D52B3 /* AMSwitchButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMSwitchButton.h; sourceTree = "<group>"; };
 		02116C270E5A262B000D52B3 /* AMSwitchButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMSwitchButton.m; sourceTree = "<group>"; };
 		022082820E268CE6004F2B5A /* MainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
-		0221D4B10DF54930002AB57B /* app.icns.disabled */ = {isa = PBXFileReference; lastKnownFileType = file; path = app.icns.disabled; sourceTree = "<group>"; };
 		0232C0CB0EED63E500D85580 /* SecurityFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SecurityFoundation.framework; path = System/Library/Frameworks/SecurityFoundation.framework; sourceTree = SDKROOT; };
 		0236404D0E24FAAA007271F1 /* AMServerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMServerViewController.h; sourceTree = "<group>"; };
 		0236404E0E24FAAA007271F1 /* AMServerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMServerViewController.m; sourceTree = "<group>"; };
@@ -61,7 +63,6 @@
 		023645070E256FC1007271F1 /* AMSessionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMSessionViewController.m; sourceTree = "<group>"; };
 		02376ADF0E23C0790058B22A /* AMAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMAccountViewController.m; sourceTree = "<group>"; };
 		02376AE00E23C0790058B22A /* AMAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMAccountViewController.h; sourceTree = "<group>"; };
-		02376B4E0E23C4AD0058B22A /* createAbornetAccount.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = createAbornetAccount.sh; sourceTree = "<group>"; };
 		023B9C4A0DF9AEF700C07FD9 /* RemoveKeyCommand.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = RemoveKeyCommand.sh; sourceTree = "<group>"; };
 		024491730E608A8F00D92725 /* sessions.sst */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = sessions.sst; sourceTree = "<group>"; };
 		02452E9B0DF6D1CD00119375 /* SSHCommand.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = SSHCommand.sh; sourceTree = "<group>"; };
@@ -85,10 +86,6 @@
 		029BE6D30E2803610099093A /* AMBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMBaseViewController.h; sourceTree = "<group>"; };
 		029BE79D0E280D6B0099093A /* AMPopUpButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMPopUpButton.h; sourceTree = "<group>"; };
 		029BE79E0E280D6B0099093A /* AMPopUpButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMPopUpButton.m; sourceTree = "<group>"; };
-		029BE7DB0E28143E0099093A /* serversAccounts.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = serversAccounts.plist; sourceTree = "<group>"; };
-		029C395B0E5F989D009B7688 /* COPYING.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING.txt; sourceTree = "<group>"; };
-		029C395D0E5F98D6009B7688 /* AUTHORS.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AUTHORS.txt; sourceTree = "<group>"; };
-		029C395E0E5F98D6009B7688 /* CHANGELOG.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG.txt; sourceTree = "<group>"; };
 		029C399A0E5F9B92009B7688 /* SSHTunnelWorkaround */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SSHTunnelWorkaround; sourceTree = "<group>"; };
 		02B10F660E5DE0E200715AE4 /* AMTreeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMTreeController.h; sourceTree = "<group>"; };
 		02B10F670E5DE0E200715AE4 /* AMTreeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMTreeController.m; sourceTree = "<group>"; };
@@ -108,6 +105,15 @@
 		2A42E2982BB5569D00D40D7D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2A42E2992BB5569D00D40D7D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2A42E2A22BB5578000D40D7D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2A73F32E2BB56813007FE4A8 /* statusGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = statusGreen.png; path = Resources/exported/statusGreen.png; sourceTree = "<group>"; };
+		2A73F32F2BB56813007FE4A8 /* statusGreen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "statusGreen@2x.png"; path = "Resources/exported/statusGreen@2x.png"; sourceTree = "<group>"; };
+		2A73F3302BB56813007FE4A8 /* statusOrange@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "statusOrange@3x.png"; path = "Resources/exported/statusOrange@3x.png"; sourceTree = "<group>"; };
+		2A73F3312BB56813007FE4A8 /* statusGreen@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "statusGreen@3x.png"; path = "Resources/exported/statusGreen@3x.png"; sourceTree = "<group>"; };
+		2A73F3322BB56813007FE4A8 /* statusOrange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = statusOrange.png; path = Resources/exported/statusOrange.png; sourceTree = "<group>"; };
+		2A73F3332BB56813007FE4A8 /* statusRed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "statusRed@2x.png"; path = "Resources/exported/statusRed@2x.png"; sourceTree = "<group>"; };
+		2A73F3342BB56813007FE4A8 /* statusRed@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "statusRed@3x.png"; path = "Resources/exported/statusRed@3x.png"; sourceTree = "<group>"; };
+		2A73F3352BB56813007FE4A8 /* statusOrange@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "statusOrange@2x.png"; path = "Resources/exported/statusOrange@2x.png"; sourceTree = "<group>"; };
+		2A73F3362BB56813007FE4A8 /* statusRed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = statusRed.png; path = Resources/exported/statusRed.png; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* SSHTunnel_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSHTunnel_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* SSHTunnel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SSHTunnel.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -334,9 +340,6 @@
 			isa = PBXGroup;
 			children = (
 				2A42E2A22BB5578000D40D7D /* Assets.xcassets */,
-				029C395D0E5F98D6009B7688 /* AUTHORS.txt */,
-				029C395E0E5F98D6009B7688 /* CHANGELOG.txt */,
-				029C395B0E5F989D009B7688 /* COPYING.txt */,
 				029C399A0E5F9B92009B7688 /* SSHTunnelWorkaround */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -361,20 +364,26 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2A73F32E2BB56813007FE4A8 /* statusGreen.png */,
+				2A73F32F2BB56813007FE4A8 /* statusGreen@2x.png */,
+				2A73F3312BB56813007FE4A8 /* statusGreen@3x.png */,
+				2A73F3322BB56813007FE4A8 /* statusOrange.png */,
+				2A73F3352BB56813007FE4A8 /* statusOrange@2x.png */,
+				2A73F3302BB56813007FE4A8 /* statusOrange@3x.png */,
+				2A73F3362BB56813007FE4A8 /* statusRed.png */,
+				2A73F3332BB56813007FE4A8 /* statusRed@2x.png */,
+				2A73F3342BB56813007FE4A8 /* statusRed@3x.png */,
 				024491730E608A8F00D92725 /* sessions.sst */,
 				02B214BE0E6073F8007014CB /* services.sst */,
 				022082A70E268E69004F2B5A /* Localizable.strings */,
 				022082820E268CE6004F2B5A /* MainMenu.xib */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
-				02376B4E0E23C4AD0058B22A /* createAbornetAccount.sh */,
 				023B9C4A0DF9AEF700C07FD9 /* RemoveKeyCommand.sh */,
 				026982000DF965BE00D9C22C /* GenerateKeyCommand.sh */,
 				02697F1D0DF9210B00D9C22C /* PutKeyCommand.sh */,
 				02F375710E5F0D5B00F23038 /* SSHShell.command */,
 				02452E9B0DF6D1CD00119375 /* SSHCommand.sh */,
-				0221D4B10DF54930002AB57B /* app.icns.disabled */,
 				8D1107310486CEB800E47090 /* Info.plist */,
-				029BE7DB0E28143E0099093A /* serversAccounts.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -453,24 +462,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A73F33F2BB56813007FE4A8 /* statusRed.png in Resources */,
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
-				0221D4B20DF54930002AB57B /* app.icns.disabled in Resources */,
 				02452E9C0DF6D1CD00119375 /* SSHCommand.sh in Resources */,
 				2A42E2A32BB5578000D40D7D /* Assets.xcassets in Resources */,
 				02697F1E0DF9210B00D9C22C /* PutKeyCommand.sh in Resources */,
 				026982010DF965BE00D9C22C /* GenerateKeyCommand.sh in Resources */,
+				2A73F33A2BB56813007FE4A8 /* statusGreen@3x.png in Resources */,
 				023B9C4B0DF9AEF700C07FD9 /* RemoveKeyCommand.sh in Resources */,
-				02376B4F0E23C4AD0058B22A /* createAbornetAccount.sh in Resources */,
 				02AF86EA0E5C9AA200DD6F70 /* MainMenu.xib in Resources */,
+				2A73F3372BB56813007FE4A8 /* statusGreen.png in Resources */,
+				2A73F33B2BB56813007FE4A8 /* statusOrange.png in Resources */,
 				022082A90E268E69004F2B5A /* Localizable.strings in Resources */,
-				029BE7DC0E28143E0099093A /* serversAccounts.plist in Resources */,
 				02F375720E5F0D5B00F23038 /* SSHShell.command in Resources */,
-				029C395C0E5F989D009B7688 /* COPYING.txt in Resources */,
-				029C395F0E5F98D6009B7688 /* AUTHORS.txt in Resources */,
-				029C39600E5F98D6009B7688 /* CHANGELOG.txt in Resources */,
+				2A73F33C2BB56813007FE4A8 /* statusRed@2x.png in Resources */,
 				029C39A60E5F9B92009B7688 /* SSHTunnelWorkaround in Resources */,
 				02B214C10E6073F8007014CB /* services.sst in Resources */,
+				2A73F3382BB56813007FE4A8 /* statusGreen@2x.png in Resources */,
+				2A73F33E2BB56813007FE4A8 /* statusOrange@2x.png in Resources */,
 				024491740E608A8F00D92725 /* sessions.sst in Resources */,
+				2A73F33D2BB56813007FE4A8 /* statusRed@3x.png in Resources */,
+				2A73F3392BB56813007FE4A8 /* statusOrange@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

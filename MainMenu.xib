@@ -117,7 +117,7 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <clipView key="contentView" drawsBackground="NO" id="lK1-Fy-c2g">
                                 <rect key="frame" x="0.0" y="0.0" width="647" height="283"/>
-                                <autoresizingMask key="autoresizingMask"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" columnSelection="YES" multipleSelection="NO" emptySelection="NO" autosaveName="sessionsListTab" rowHeight="20" headerView="3029" indentationPerLevel="14" autosaveExpandedItems="YES" autoresizesOutlineColumn="YES" outlineTableColumn="2910" id="2908">
                                         <rect key="frame" x="0.0" y="0.0" width="647" height="260"/>
@@ -1203,7 +1203,7 @@ DQ
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2515">
-                    <rect key="frame" x="164" y="38" width="237" height="22"/>
+                    <rect key="frame" x="164" y="38" width="236" height="22"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" bezelStyle="round" id="2516">
                         <font key="font" metaFont="system"/>
@@ -1245,7 +1245,7 @@ DQ
                     </connections>
                 </button>
                 <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2371">
-                    <rect key="frame" x="161" y="100" width="243" height="26"/>
+                    <rect key="frame" x="161" y="100" width="242" height="26"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" continuous="YES" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="2376" id="2372">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>

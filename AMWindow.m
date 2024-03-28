@@ -41,7 +41,7 @@
 	
 	[alert setMessageText:title];
 	[alert setInformativeText:message];
-	[alert setAlertStyle:NSWarningAlertStyle];
+    [alert setAlertStyle:NSAlertStyleWarning];
 	
 	[alert beginSheetModalForWindow:self 
 					  modalDelegate:sender 

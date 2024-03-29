@@ -985,15 +985,6 @@
                         <binding destination="2902" name="value" keyPath="selection.autostart" id="3212"/>
                     </connections>
                 </button>
-                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2708">
-                    <rect key="frame" x="413" y="81" width="24" height="16"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="On" id="2709">
-                        <font key="font" metaFont="cellTitle"/>
-                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
                 <customView hidden="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2669" customClass="AMSwitchButton">
                     <rect key="frame" x="102" y="37" width="64" height="23"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
@@ -1016,8 +1007,6 @@ DQ
                     </subviews>
                     <connections>
                         <outlet property="appController" destination="461" id="2692"/>
-                        <outlet property="offLabel" destination="2705" id="2707"/>
-                        <outlet property="onLabel" destination="2708" id="2710"/>
                         <outlet property="sessionController" destination="1632" id="2694"/>
                         <outlet property="switchView" destination="2685" id="2688"/>
                     </connections>
@@ -1087,24 +1076,39 @@ DQ
                         </textField>
                     </subviews>
                 </customView>
-                <switch horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" baseWritingDirection="leftToRight" alignment="left" translatesAutoresizingMaskIntoConstraints="NO" id="fOA-3o-i25">
-                    <rect key="frame" x="367" y="76" width="42" height="25"/>
+                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B3G-U1-xpW">
+                    <rect key="frame" x="342" y="71" width="100" height="32"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="push" title="Start" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ciM-fW-X47">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <color key="bezelColor" name="systemGreenColor" catalog="System" colorSpace="catalog"/>
                     <connections>
-                        <action selector="switchStatus:" target="2669" id="Jq4-3S-BGy"/>
+                        <action selector="switchStatus:" target="2669" id="SPt-hS-rCs"/>
+                        <binding destination="2902" name="hidden" keyPath="selection.connected" id="FUd-aU-k9e"/>
                     </connections>
-                </switch>
-                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2705">
-                    <rect key="frame" x="339" y="80" width="24" height="16"/>
+                </button>
+                <button hidden="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ecg-gm-We0">
+                    <rect key="frame" x="342" y="71" width="100" height="32"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Off" id="2706">
-                        <font key="font" metaFont="cellTitle"/>
-                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
+                    <buttonCell key="cell" type="push" title="Stop" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="6Nd-Zf-2qX">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <color key="bezelColor" name="systemRedColor" catalog="System" colorSpace="catalog"/>
+                    <connections>
+                        <action selector="switchStatus:" target="2669" id="FJ9-RT-3Ab"/>
+                        <binding destination="2902" name="enabled" keyPath="selection.connected" id="aPA-j8-bZ4"/>
+                        <binding destination="2902" name="hidden" keyPath="selection.connected" previousBinding="aPA-j8-bZ4" id="rHD-RX-lzU">
+                            <dictionary key="options">
+                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </button>
                 <progressIndicator horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" minValue="16" maxValue="100" doubleValue="16" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="3090">
-                    <rect key="frame" x="317" y="80" width="16" height="16"/>
+                    <rect key="frame" x="325" y="81" width="16" height="16"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                     <connections>
                         <binding destination="2902" name="hidden" keyPath="selection.connectionInProgress" id="3094">

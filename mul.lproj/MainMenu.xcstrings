@@ -19,6 +19,18 @@
         }
       }
     },
+    "6Nd-Zf-2qX.title" : {
+      "comment" : "Class = \"NSButtonCell\"; title = \"Stop\"; ObjectID = \"6Nd-Zf-2qX\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Stop"
+          }
+        }
+      }
+    },
     "19.title" : {
       "comment" : "Class = \"NSMenuItem\"; title = \"Window\"; ObjectID = \"19\";",
       "extractionState" : "extracted_with_value",
@@ -1839,7 +1851,7 @@
     },
     "2706.title" : {
       "comment" : "Class = \"NSTextFieldCell\"; title = \"Off\"; ObjectID = \"2706\";",
-      "extractionState" : "extracted_with_value",
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1857,7 +1869,7 @@
     },
     "2709.title" : {
       "comment" : "Class = \"NSTextFieldCell\"; title = \"On\"; ObjectID = \"2709\";",
-      "extractionState" : "extracted_with_value",
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2823,6 +2835,18 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Check for Updates..."
+          }
+        }
+      }
+    },
+    "ciM-fW-X47.title" : {
+      "comment" : "Class = \"NSButtonCell\"; title = \"Start\"; ObjectID = \"ciM-fW-X47\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Start"
           }
         }
       }

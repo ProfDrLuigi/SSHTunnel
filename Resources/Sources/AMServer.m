@@ -105,9 +105,10 @@
 	
 	
 	if ([checkSuccess evaluateWithObject:outputContent] == YES)
-		[self setStatusImagePath:[AMResourcesHelper pathForImageNamed:@"statusGreen"]];
+        [self setStatusImagePath:[[NSBundle mainBundle] pathForResource:@"statusGreen" ofType:@"png"]];
+
 	else
-		[self setStatusImagePath:[AMResourcesHelper pathForImageNamed:@"statusRed"]];
+        [self setStatusImagePath:[[NSBundle mainBundle] pathForResource:@"statusRed" ofType:@"png"]];
 	
 	[[NSNotificationCenter defaultCenter]  removeObserver:self name:NSFileHandleReadCompletionNotification object:[stdOut fileHandleForReading]];
 	[ping terminate];
@@ -129,7 +130,7 @@
 	if ([self host] == nil)
 		return;
 	
-	[self setStatusImagePath:[AMResourcesHelper pathForImageNamed:@"statusOrange"]];
+    [self setStatusImagePath:[[NSBundle mainBundle] pathForResource:@"statusOrange" ofType:@"png"]];
 	[ping setLaunchPath:@"/sbin/ping"];
 	[ping setArguments:[NSArray arrayWithObjects:@"-c", @"1", @"-t", @"2", [self host], nil]];
 	[ping setStandardOutput:stdOut];

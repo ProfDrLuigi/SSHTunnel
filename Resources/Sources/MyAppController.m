@@ -220,14 +220,15 @@
 		}
 	}
 	 */
-	NSStatusBar *statusBar = [NSStatusBar systemStatusBar];
-	statusBarItem = [statusBar statusItemWithLength: NSVariableStatusItemLength];
-	
-    NSBundle *mainBundle = [NSBundle mainBundle];
-    NSImage *taskbarIcon = [[NSImage alloc] initWithContentsOfFile:[mainBundle pathForResource:@"taskbarIcon" ofType:@"tiff"]];
-    [statusBarItem.button setImage:taskbarIcon];
+    NSStatusBar *statusBar = [NSStatusBar systemStatusBar];
+    statusBarItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSSquareStatusItemLength];
+    NSImage *statusBarImage = [NSImage imageNamed:@"TaskbarIcon"];;
+
+    // Setzen des Symbols für das Statusleistenobjekt
+    [statusBarItem setImage:statusBarImage];
     [statusBarItem.button setEnabled:YES];
     [statusBarItem setMenu:taskBarMenu];
+
 
 }
 

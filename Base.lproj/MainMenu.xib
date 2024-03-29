@@ -34,7 +34,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="215" y="263" width="685" height="496"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="2056" height="1285"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1415"/>
             <value key="minSize" type="size" width="637" height="325"/>
             <value key="maxSize" type="size" width="864" height="674"/>
             <view key="contentView" focusRingType="none" id="372">
@@ -50,7 +50,7 @@
                             <action selector="displaySessionView:" target="461" id="1910"/>
                         </connections>
                     </toolbarItem>
-                    <toolbarItem implicitItemIdentifier="00952A62-5A39-455C-8E61-240C4A96AF2C" label="Services" paletteLabel="Services" tag="-1" image="tube" id="2266">
+                    <toolbarItem implicitItemIdentifier="00952A62-5A39-455C-8E61-240C4A96AF2C" label="Services" paletteLabel="Services" tag="-1" image="NSAdvanced" id="2266">
                         <size key="minSize" width="18" height="22"/>
                         <size key="maxSize" width="18" height="22"/>
                         <connections>
@@ -98,7 +98,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="218" width="479" height="292"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="2056" height="1285"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1415"/>
             <view key="contentView" id="2489">
                 <rect key="frame" x="0.0" y="0.0" width="479" height="292"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -118,7 +118,7 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <clipView key="contentView" drawsBackground="NO" id="lK1-Fy-c2g">
                                 <rect key="frame" x="0.0" y="0.0" width="647" height="283"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
                                     <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" columnSelection="YES" multipleSelection="NO" emptySelection="NO" autosaveName="sessionsListTab" rowHeight="20" headerView="3029" indentationPerLevel="14" autosaveExpandedItems="YES" autoresizesOutlineColumn="YES" outlineTableColumn="2910" id="2908">
                                         <rect key="frame" x="0.0" y="0.0" width="647" height="260"/>
@@ -239,7 +239,7 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <clipView key="contentView" drawsBackground="NO" id="cDR-ec-HOQ">
                                         <rect key="frame" x="0.0" y="0.0" width="175" height="284"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <autoresizingMask key="autoresizingMask"/>
                                         <subviews>
                                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" columnSelection="YES" multipleSelection="NO" emptySelection="NO" autosaveName="serversView" headerView="2667" id="1374">
                                                 <rect key="frame" x="0.0" y="0.0" width="175" height="261"/>
@@ -1999,13 +1999,13 @@ CA
     <resources>
         <image name="NSActionTemplate" width="20" height="20"/>
         <image name="NSAddTemplate" width="18" height="17"/>
+        <image name="NSAdvanced" width="32" height="32"/>
         <image name="NSApplicationIcon" width="32" height="32"/>
         <image name="NSListViewTemplate" width="21" height="15"/>
         <image name="NSNetwork" width="32" height="32"/>
         <image name="NSRefreshTemplate" width="18" height="21"/>
         <image name="NSRemoveTemplate" width="18" height="5"/>
         <image name="destroy" width="128" height="128"/>
-        <image name="prefs" width="1024" height="1024"/>
-        <image name="tube" width="154" height="186"/>
+        <image name="prefs" width="32" height="32"/>
     </resources>
 </document>

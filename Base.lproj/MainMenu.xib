@@ -34,7 +34,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="215" y="263" width="685" height="496"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1415"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2056" height="1285"/>
             <value key="minSize" type="size" width="637" height="325"/>
             <value key="maxSize" type="size" width="864" height="674"/>
             <view key="contentView" focusRingType="none" id="372">
@@ -107,7 +107,7 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <clipView key="contentView" drawsBackground="NO" id="lK1-Fy-c2g">
                                 <rect key="frame" x="0.0" y="0.0" width="647" height="283"/>
-                                <autoresizingMask key="autoresizingMask"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" columnSelection="YES" multipleSelection="NO" emptySelection="NO" autosaveName="sessionsListTab" rowHeight="20" headerView="3029" indentationPerLevel="14" autosaveExpandedItems="YES" autoresizesOutlineColumn="YES" outlineTableColumn="2910" id="2908">
                                         <rect key="frame" x="0.0" y="0.0" width="647" height="260"/>
@@ -228,7 +228,7 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <clipView key="contentView" drawsBackground="NO" id="cDR-ec-HOQ">
                                         <rect key="frame" x="0.0" y="0.0" width="175" height="284"/>
-                                        <autoresizingMask key="autoresizingMask"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
                                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" columnSelection="YES" multipleSelection="NO" emptySelection="NO" autosaveName="serversView" headerView="2667" id="1374">
                                                 <rect key="frame" x="0.0" y="0.0" width="175" height="261"/>
@@ -723,6 +723,15 @@
                                                     <action selector="applyCurrentServerToAllSessions:" target="461" id="3313"/>
                                                 </connections>
                                             </button>
+                                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sc3-xx-3lz">
+                                                <rect key="frame" x="144" y="38" width="254" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                <textFieldCell key="cell" selectable="YES" title="Leave Password Field empty if you are using SSH Key in ~/.ssh Directory." id="xf3-25-58D">
+                                                    <font key="font" metaFont="system" size="11"/>
+                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
                                         </subviews>
                                     </view>
                                 </box>

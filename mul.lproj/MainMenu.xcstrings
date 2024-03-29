@@ -2843,10 +2843,34 @@
       "comment" : "Class = \"NSButtonCell\"; title = \"Start\"; ObjectID = \"ciM-fW-X47\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Start"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Start"
+          }
+        }
+      }
+    },
+    "xf3-25-58D.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Leave Password Field empty if you are using SSH Key in ~/.ssh Directory.\"; ObjectID = \"xf3-25-58D\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lasse das Passwortfeld leer, wenn Du einen SSH-Schlüssel im Verzeichnis ~/.ssh verwendest."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Leave Password Field empty if you are using SSH Key in ~/.ssh Directory."
           }
         }
       }

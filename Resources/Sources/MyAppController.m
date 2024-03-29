@@ -220,7 +220,7 @@
 		}
 	}
 	 */
-    NSStatusBar *statusBar = [NSStatusBar systemStatusBar];
+    //NSStatusBar *statusBar = [NSStatusBar systemStatusBar];
     statusBarItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSSquareStatusItemLength];
     NSImage *statusBarImage = [NSImage imageNamed:@"TaskbarIcon"];;
 

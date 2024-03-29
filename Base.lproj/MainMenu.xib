@@ -16,6 +16,7 @@
         <customObject id="PHc-Ps-NsJ" customClass="SPUStandardUpdaterController"/>
         <customObject id="461" customClass="MyAppController">
             <connections>
+                <outlet property="DockCheck" destination="3190" id="bqG-LO-INT"/>
                 <outlet property="errorMessage" destination="1025" id="1028"/>
                 <outlet property="errorPanel" destination="1024" id="1027"/>
                 <outlet property="mainApplicationWindow" destination="371" id="2014"/>
@@ -27,6 +28,7 @@
                 <outlet property="serviceView" destination="2236" id="2295"/>
                 <outlet property="sessionController" destination="1632" id="1640"/>
                 <outlet property="sessionView" destination="959" id="1965"/>
+                <outlet property="statusBarCheck" destination="3192" id="fVG-9j-Bg1"/>
                 <outlet property="taskBarMenu" destination="3152" id="3174"/>
             </connections>
         </customObject>
@@ -118,7 +120,7 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <clipView key="contentView" drawsBackground="NO" id="lK1-Fy-c2g">
                                 <rect key="frame" x="0.0" y="0.0" width="647" height="283"/>
-                                <autoresizingMask key="autoresizingMask"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" columnSelection="YES" multipleSelection="NO" emptySelection="NO" autosaveName="sessionsListTab" rowHeight="20" headerView="3029" indentationPerLevel="14" autosaveExpandedItems="YES" autoresizesOutlineColumn="YES" outlineTableColumn="2910" id="2908">
                                         <rect key="frame" x="0.0" y="0.0" width="647" height="260"/>
@@ -1804,7 +1806,7 @@ CA
                 <menuItem title="Preferences" id="3156">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
-                        <action selector="makeKeyAndOrderFront:" target="2488" id="3176"/>
+                        <action selector="displayPreferenceView:" target="461" id="aaY-9Q-5w6"/>
                     </connections>
                 </menuItem>
                 <menuItem title="Quit SSHTunnel" id="3162">
@@ -1849,16 +1851,21 @@ CA
                         <font key="font" metaFont="system"/>
                     </buttonCell>
                     <connections>
+                        <action selector="enableStatusBar:" target="461" id="cd1-yA-sPb"/>
                         <binding destination="1200" name="value" keyPath="values.displayIconInStatusBar" id="3206"/>
                     </connections>
                 </button>
                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3190">
                     <rect key="frame" x="296" y="56" width="153" height="18"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="check" title="In the Dock" bezelStyle="regularSquare" imagePosition="left" alignment="left" enabled="NO" state="on" inset="2" id="3191">
+                    <buttonCell key="cell" type="check" title="In the Dock" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="3191">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="hideDock:" target="461" id="TYk-Zd-cdP"/>
+                        <binding destination="1200" name="value" keyPath="values.displayIconInDock" id="60K-Ss-bad"/>
+                    </connections>
                 </button>
                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2757">
                     <rect key="frame" x="296" y="191" width="153" height="18"/>

@@ -16,6 +16,7 @@
 
 #import "MyAppController.h"
 
+
 @implementation MyAppController
 @synthesize hostName;
 
@@ -36,7 +37,7 @@
 																	   @"YES", 
 																	   @"YES",
 																	   [@"~/Library/Application Support/SSHTunnel" stringByExpandingTildeInPath], nil] 
-															  forKeys:[NSArray arrayWithObjects:@"checkForNewVersion", 
+                                                              forKeys:[NSArray arrayWithObjects:@"checkForNewVersion", 
 																	   @"useGraphicalEffects",
 																	   @"forceSSHVersion2", 
 																	   @"useKeychainIntegration", 
@@ -77,8 +78,22 @@
 	
 	if ([[NSUserDefaults standardUserDefaults] boolForKey:@"displayIconInStatusBar"] == YES)
 		[self prepareStatusBarMenu];
+ 
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"displayIconInStatusBar"] == NO)
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"displayIconInDock"];
+    
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"displayIconInDock"] == NO)
+        [self hideDockIcon];
 }
 
+- (IBAction)hideDock:(id)sender {
+    //if ([[NSUserDefaults standardUserDefaults] boolForKey:@"displayIconInDock"] == YES)
+        //[self hideDockIcon];
+}
+- (IBAction)enableStatusBar:(id)sender {
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"displayIconInStatusBar"] == NO)
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"displayIconInDock"];
+}
 
 #pragma mark -
 #pragma mark Helper methods
@@ -208,11 +223,18 @@
 	NSStatusBar *statusBar = [NSStatusBar systemStatusBar];
 	statusBarItem = [statusBar statusItemWithLength: NSVariableStatusItemLength];
 	
-	[statusBarItem setImage:[[NSImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"taskbarIcon" ofType:@"tiff"]]];
-	[statusBarItem setEnabled:YES];
-	[statusBarItem setMenu:taskBarMenu];
+    NSBundle *mainBundle = [NSBundle mainBundle];
+    NSImage *taskbarIcon = [[NSImage alloc] initWithContentsOfFile:[mainBundle pathForResource:@"taskbarIcon" ofType:@"tiff"]];
+    [statusBarItem.button setImage:taskbarIcon];
+    [statusBarItem.button setEnabled:YES];
+    [statusBarItem setMenu:taskBarMenu];
+
 }
 
+- (void) hideDockIcon
+{
+    [NSApp setActivationPolicy:NSApplicationActivationPolicyAccessory];
+}
 
 #pragma mark -
 #pragma mark Observer and Delegates

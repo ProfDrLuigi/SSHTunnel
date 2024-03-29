@@ -46,7 +46,9 @@
 	IBOutlet AMServerViewController		*serverController;
 	IBOutlet AMServiceViewController	*serviceController;
 	IBOutlet NSUserDefaultsController	*preferencesController;
-	
+    __weak IBOutlet NSButton *statusBarCheck;
+    __weak IBOutlet NSButton *DockCheck;
+    
 	NSTimer							*timer;
 	NSView							*backViewReminder;
 	NSString						*__strong hostName;
@@ -69,7 +71,6 @@
 - (IBAction) openAllSession:(id)sender;
 - (IBAction) closeAllSession:(id)sender;
 - (IBAction) killAllSSH:(id)sender;
-- (IBAction) checkForNewVersion:(id)sender;
 - (IBAction) resetApplicationSupportFolder:(id)sender;
 - (IBAction) openMainWindow:(id)sender;
 - (IBAction) closeMainWindow:(id)sender;

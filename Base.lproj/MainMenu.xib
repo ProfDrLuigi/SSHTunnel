@@ -16,7 +16,6 @@
         <customObject id="PHc-Ps-NsJ" customClass="SPUStandardUpdaterController"/>
         <customObject id="461" customClass="MyAppController">
             <connections>
-                <outlet property="DockCheck" destination="3190" id="bqG-LO-INT"/>
                 <outlet property="errorMessage" destination="1025" id="1028"/>
                 <outlet property="errorPanel" destination="1024" id="1027"/>
                 <outlet property="mainApplicationWindow" destination="371" id="2014"/>
@@ -28,7 +27,6 @@
                 <outlet property="serviceView" destination="2236" id="2295"/>
                 <outlet property="sessionController" destination="1632" id="1640"/>
                 <outlet property="sessionView" destination="959" id="1965"/>
-                <outlet property="statusBarCheck" destination="3192" id="fVG-9j-Bg1"/>
                 <outlet property="taskBarMenu" destination="3152" id="3174"/>
             </connections>
         </customObject>
@@ -111,12 +109,13 @@
             <rect key="frame" x="0.0" y="0.0" width="647" height="313"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <customView id="1049">
+                <customView fixedFrame="YES" id="1049">
                     <rect key="frame" x="0.0" y="0.0" width="647" height="313"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <subviews>
-                        <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="20" horizontalPageScroll="10" verticalLineScroll="20" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2905">
+                        <scrollView fixedFrame="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="20" horizontalPageScroll="10" verticalLineScroll="20" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2905">
                             <rect key="frame" x="1" y="29" width="647" height="283"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <clipView key="contentView" drawsBackground="NO" id="lK1-Fy-c2g">
                                 <rect key="frame" x="0.0" y="0.0" width="647" height="283"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -184,8 +183,9 @@
                                 <autoresizingMask key="autoresizingMask"/>
                             </tableHeaderView>
                         </scrollView>
-                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2580" customClass="AMButtonMenu">
+                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2580" customClass="AMButtonMenu">
                             <rect key="frame" x="0.0" y="-1" width="28" height="28"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSActionTemplate" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2581">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                 <font key="font" metaFont="system"/>
@@ -194,45 +194,27 @@
                                 <outlet property="popUpMenu" destination="2607" id="2613"/>
                             </connections>
                         </button>
-                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1047">
+                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1047">
                             <rect key="frame" x="55" y="-1" width="593" height="28"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" imagePosition="right" alignment="right" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1048">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                 <font key="font" metaFont="system"/>
                             </buttonCell>
                         </button>
-                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2471">
+                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2471">
                             <rect key="frame" x="27" y="-1" width="28" height="28"/>
-                            <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSRemoveTemplate" imagePosition="only" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2472">
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSRemoveTemplate" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2472">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                 <font key="font" metaFont="system"/>
                             </buttonCell>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="26" id="91J-LD-cOH"/>
-                                <constraint firstAttribute="width" constant="28" id="aQo-Ya-Npi"/>
-                            </constraints>
                             <connections>
                                 <action selector="remove:" target="2902" id="2930"/>
                                 <binding destination="2902" name="enabled" keyPath="canRemove" id="3102"/>
                             </connections>
                         </button>
                     </subviews>
-                    <constraints>
-                        <constraint firstItem="2471" firstAttribute="firstBaseline" secondItem="2580" secondAttribute="firstBaseline" id="41u-Co-MXr"/>
-                        <constraint firstItem="2905" firstAttribute="leading" secondItem="1049" secondAttribute="leading" constant="1" id="6P7-sN-kFF"/>
-                        <constraint firstItem="1047" firstAttribute="leading" secondItem="2580" secondAttribute="trailing" constant="27" id="A54-y2-FTn"/>
-                        <constraint firstItem="2471" firstAttribute="bottom" secondItem="1047" secondAttribute="bottom" id="ARB-Yx-gR6"/>
-                        <constraint firstAttribute="trailing" secondItem="2905" secondAttribute="trailing" constant="-1" id="Eew-2d-g7J"/>
-                        <constraint firstItem="2471" firstAttribute="top" secondItem="1047" secondAttribute="top" id="U0Z-jN-Dm9"/>
-                        <constraint firstItem="1047" firstAttribute="leading" secondItem="2471" secondAttribute="trailing" id="Vis-kx-f0m"/>
-                        <constraint firstItem="2580" firstAttribute="leading" secondItem="1049" secondAttribute="leading" id="WiJ-pi-RCe"/>
-                        <constraint firstItem="2905" firstAttribute="trailing" secondItem="1047" secondAttribute="trailing" id="Wme-Gc-9in"/>
-                        <constraint firstItem="2471" firstAttribute="top" secondItem="2905" secondAttribute="bottom" constant="3" id="Zpk-Sr-psw"/>
-                        <constraint firstAttribute="bottom" secondItem="2471" secondAttribute="bottom" id="bRd-Xl-6Br"/>
-                        <constraint firstItem="2905" firstAttribute="top" secondItem="1049" secondAttribute="top" constant="1" id="hja-OS-nK2"/>
-                        <constraint firstItem="2471" firstAttribute="leading" secondItem="1049" secondAttribute="leading" constant="27" id="qdl-mv-Bzw"/>
-                        <constraint firstItem="2471" firstAttribute="baseline" secondItem="2580" secondAttribute="baseline" id="r9V-d8-mwQ"/>
-                    </constraints>
                 </customView>
             </subviews>
             <holdingPriorities>
@@ -1822,7 +1804,7 @@ CA
                 <menuItem title="Preferences" id="3156">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
-                        <action selector="displayPreferenceView:" target="461" id="aaY-9Q-5w6"/>
+                        <action selector="displayPreferenceView:" target="461" id="7ea-aT-tAf"/>
                     </connections>
                 </menuItem>
                 <menuItem title="Quit SSHTunnel" id="3162">
@@ -1867,7 +1849,7 @@ CA
                         <font key="font" metaFont="system"/>
                     </buttonCell>
                     <connections>
-                        <action selector="enableStatusBar:" target="461" id="cd1-yA-sPb"/>
+                        <action selector="enableStatusBar:" target="461" id="zN1-tM-C1S"/>
                         <binding destination="1200" name="value" keyPath="values.displayIconInStatusBar" id="3206"/>
                     </connections>
                 </button>
@@ -1879,8 +1861,8 @@ CA
                         <font key="font" metaFont="system"/>
                     </buttonCell>
                     <connections>
-                        <action selector="hideDock:" target="461" id="TYk-Zd-cdP"/>
-                        <binding destination="1200" name="value" keyPath="values.displayIconInDock" id="60K-Ss-bad"/>
+                        <action selector="hideDock:" target="461" id="zPH-2W-QaP"/>
+                        <binding destination="1200" name="value" keyPath="values.displayIconInDock" id="n1z-Of-iR8"/>
                     </connections>
                 </button>
                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2757">

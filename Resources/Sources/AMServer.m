@@ -106,7 +106,6 @@
 	
 	if ([checkSuccess evaluateWithObject:outputContent] == YES)
         [self setStatusImagePath:[[NSBundle mainBundle] pathForResource:@"statusGreen" ofType:@"png"]];
-
 	else
         [self setStatusImagePath:[[NSBundle mainBundle] pathForResource:@"statusRed" ofType:@"png"]];
 	

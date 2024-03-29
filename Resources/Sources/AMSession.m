@@ -64,32 +64,6 @@
 	return self;
 }
 
-- (void) prepareAuthorization
-{	
-	OSStatus myStatus;
-	AuthorizationFlags myFlags = kAuthorizationFlagDefaults;
-	AuthorizationRef myAuthorizationRef;
-	myStatus = AuthorizationCreate(NULL, kAuthorizationEmptyEnvironment,
-								   myFlags, &myAuthorizationRef);    
-	
-	if (myStatus != errAuthorizationSuccess) 
-	{
-		NSLog(@"An administrator password is required...");
-	}
-	else
-	{
-		AuthorizationItem myItems = {kAuthorizationRightExecute, 0, NULL, 0};
-		
-		AuthorizationRights myRights = {1, &myItems};
-		myFlags = kAuthorizationFlagDefaults |                   
-		kAuthorizationFlagInteractionAllowed |
-		kAuthorizationFlagPreAuthorize |
-		kAuthorizationFlagExtendRights;
-		
-		myStatus = AuthorizationCopyRights (myAuthorizationRef, &myRights, NULL, myFlags, NULL );
-	}		
-}
-
 - (id) initWithCoder:(NSCoder *)coder
 {
 	self = [super init];
@@ -156,37 +130,6 @@
 	sshTask = nil;
 	
 }
-
-
-
-
-#pragma mark Overloaded accesors
-
-- (NSString *) tunnelTypeImagePath
-{
-	if ([self sessionTunnelType] == AMSessionOutgoingTunnel)
-		return [[NSBundle mainBundle] pathForResource:@"outTunnel" ofType:@"tif"];
-	else if ([self sessionTunnelType] == AMSessionIncomingTunnel) 
-		return [[NSBundle mainBundle] pathForResource:@"inTunnel" ofType:@"tif"];
-	else 
-		return [[NSBundle mainBundle] pathForResource:@"inTunnel" ofType:@"tif"];
-
-}
-
-
-- (void) setSessionTunnelType:(NSInteger)newValue
-{
-	[self willChangeValueForKey:@"outgoingTunnel"];
-	[self willChangeValueForKey:@"tunnelTypeImagePath"];
-	[self willChangeValueForKey:@"remoteHost"];
-	sessionTunnelType = newValue;
-	[self didChangeValueForKey:@"outgoingTunnel"];
-	[self didChangeValueForKey:@"tunnelTypeImagePath"];
-	[self didChangeValueForKey:@"remoteHost"];
-}
-
-
-
 
 #pragma mark Helper methods
 
@@ -320,8 +263,8 @@
 	{
 		[self setConnected:NO];
 		[self setConnectionInProgress:NO];
-		[[NSNotificationCenter defaultCenter] postNotificationName:AMNewErrorMessage  
-															object:@"There is no server set for this session."];
+		[[NSNotificationCenter defaultCenter] postNotificationName:AMNewErrorMessage
+															object:NSLocalizedString(@" There is no server set for this session.", nil)];
 		return;
 	}
 	
@@ -332,8 +275,8 @@
 		{
 			[self setConnected:NO];
 			[self setConnectionInProgress:NO];
-			[[NSNotificationCenter defaultCenter] postNotificationName:AMNewErrorMessage   
-																object:@"There is no service or remote host set for this session"];
+			[[NSNotificationCenter defaultCenter] postNotificationName:AMNewErrorMessage
+																object:NSLocalizedString(@" There is no service or remote host set for this session", nil)];
 			return;
 		}
 	}
@@ -344,8 +287,8 @@
 		{
 			[self setConnected:NO];
 			[self setConnectionInProgress:NO];
-			[[NSNotificationCenter defaultCenter] postNotificationName:AMNewErrorMessage 
-																object:@"There is no services or dynamic port set for this session."];
+			[[NSNotificationCenter defaultCenter] postNotificationName:AMNewErrorMessage
+                                                                object:NSLocalizedString(@" There is no services or dynamic port set for this session.", nil)];
 			return;
 		}
 	}
@@ -356,8 +299,8 @@
 		{
 			[self setConnected:NO];
 			[self setConnectionInProgress:NO];
-			[[NSNotificationCenter defaultCenter] postNotificationName:AMNewErrorMessage 
-																object:@"There is no dynamic port set for this session."];
+			[[NSNotificationCenter defaultCenter] postNotificationName:AMNewErrorMessage
+																object:NSLocalizedString(@" There is no dynamic port set for this session.", nil)];
 			
 			return;
 		}
@@ -403,7 +346,7 @@
 
 	NSLog(@"Session %@ is now launched.", [self sessionName]);
 	[[NSNotificationCenter defaultCenter] postNotificationName:AMNewGeneralMessage
-														object:[@"Initializing connection for session "
+														object:[NSLocalizedString(@" Initializing connection for session ", nil)
 																stringByAppendingString:[self sessionName]]];
 	
     [self setStatusImagePath:[[NSBundle mainBundle] pathForResource:@"statusOrange" ofType:@"png"]];
@@ -458,8 +401,8 @@
 			[self setConnectionInProgress:NO];
 			[self setConnectionLink:@""];
 			[sshTask terminate];
-			[[NSNotificationCenter defaultCenter] postNotificationName:AMNewErrorMessage 
-																object:[@"Unknown error for session " 
+			[[NSNotificationCenter defaultCenter] postNotificationName:AMNewErrorMessage
+																object:[NSLocalizedString(@" Unknown error for session ", nil)
 																		stringByAppendingString:[self sessionName]]];
             NSRunAlertPanel(NSLocalizedString(@"Error while connecting", @"Alert title"), NSLocalizedString(@"Unknown error has occurred while connecting.", @"Alert message"), NSLocalizedString(@"Ok", @"Ok button"), nil, nil);
 
@@ -473,7 +416,7 @@
 			[self setConnectionLink:@""];
 			[sshTask terminate];
 			[[NSNotificationCenter defaultCenter] postNotificationName:AMNewErrorMessage
-																object:[@"Wrong server password for session "
+																object:[NSLocalizedString(@" Wrong server password for session ", nil)
 																		stringByAppendingString:[self sessionName]]];
             NSRunAlertPanel(NSLocalizedString(@"Error while connecting", @"Alert title"), NSLocalizedString(@"The password or username set for the server are wrong.", @"Alert message"), NSLocalizedString(@"Ok", @"Ok button"), nil, nil);
 
@@ -488,7 +431,7 @@
 			[self setConnectionLink:@""];
 			[sshTask terminate];
 			[[NSNotificationCenter defaultCenter] postNotificationName:AMNewErrorMessage
-																object:[@"Connection has been refused by server for session "
+																object:[@" Connection has been refused by server for session "
 																		stringByAppendingString:[self sessionName]]];
             NSRunAlertPanel(NSLocalizedString(@"Error while connecting", @"Alert title"), NSLocalizedString(@"Connection has been rejected by the server.", @"Alert message"), NSLocalizedString(@"Ok", @"Ok button"), nil, nil);
 
@@ -503,7 +446,7 @@
 			[self setConnectionLink:@""];
 			[sshTask terminate];
 			[[NSNotificationCenter defaultCenter] postNotificationName:AMNewErrorMessage
-																object:[@"Wrong server port for session " 
+																object:[@" Wrong server port for session "
 																		stringByAppendingString:[self sessionName]]];
             NSRunAlertPanel(NSLocalizedString(@"Error while connecting", @"Alert title"), NSLocalizedString(@"The port is already in use on the server.", @"Alert message"), NSLocalizedString(@"Ok", @"Ok button"), nil, nil);
 
@@ -516,7 +459,7 @@
 			[self setConnectionInProgress:NO];
             [self setStatusImagePath:[[NSBundle mainBundle] pathForResource:@"statusGreen" ofType:@"png"]];
 			[[NSNotificationCenter defaultCenter] postNotificationName:AMNewGeneralMessage
-																object:[@"Sucessfully connects session "
+																object:[NSLocalizedString(@" Sucessfully connects session ", nil)
 																		stringByAppendingString:[self sessionName]]];
 		
 			if ([self sessionTunnelType] == AMSessionOutgoingTunnel)
@@ -552,7 +495,7 @@
     [self setStatusImagePath:[[NSBundle mainBundle] pathForResource:@"statusRed" ofType:@"png"]];
 	
 	[[NSNotificationCenter defaultCenter] postNotificationName:AMNewGeneralMessage
-														object:[@"Connection close for session "
+														object:[NSLocalizedString(@" Connection close for session ", nil)
 																stringByAppendingString:[self sessionName]]];
 }
 

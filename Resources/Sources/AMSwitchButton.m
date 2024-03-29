@@ -81,11 +81,11 @@
 	
 	
 	newFrame = [offLabel frame];
-	newFrame.origin.x += ([offLabel frame].size.width) + 5;
+	//newFrame.origin.x += ([offLabel frame].size.width) + 5;
 	[[offLabel animator] setFrame:newFrame];
 
 	newFrame = [onLabel frame];
-	newFrame.origin.x = 7;
+	//newFrame.origin.x = 7;
 	[[onLabel animator] setFrame:newFrame];
 
 	[appController openSession:nil];
@@ -101,11 +101,11 @@
 	[[switchView animator] setFrame:newFrame];
 	
 	newFrame = [offLabel frame];
-	newFrame.origin.x = 35;
+	//newFrame.origin.x = 35;
 	[[offLabel animator] setFrame:newFrame];
 	
 	newFrame = [onLabel frame];
-	newFrame.origin.x -= [onLabel frame].size.width + 7;
+	//newFrame.origin.x -= [onLabel frame].size.width + 7;
 	[[onLabel animator] setFrame:newFrame];
 	
 	[appController closeSession:nil];

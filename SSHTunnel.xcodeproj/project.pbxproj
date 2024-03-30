@@ -39,6 +39,7 @@
 		2A42E2A32BB5578000D40D7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A42E2A22BB5578000D40D7D /* Assets.xcassets */; };
 		2A73F3422BB56961007FE4A8 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 2A73F3412BB56961007FE4A8 /* Sparkle */; };
 		2A73F3702BB57166007FE4A8 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A73F36F2BB57166007FE4A8 /* MainMenu.xib */; };
+		2A8D08392BB8472D00FC5A05 /* sshtunnel.html in Resources */ = {isa = PBXBuildFile; fileRef = 2A8D08382BB8472D00FC5A05 /* sshtunnel.html */; };
 		2AA892D92BB6DF7800FE1A29 /* statusOrange.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AA892D02BB6DF7800FE1A29 /* statusOrange.png */; };
 		2AA892DA2BB6DF7800FE1A29 /* statusGreen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AA892D12BB6DF7800FE1A29 /* statusGreen@2x.png */; };
 		2AA892DB2BB6DF7800FE1A29 /* statusOrange@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AA892D22BB6DF7800FE1A29 /* statusOrange@3x.png */; };
@@ -108,6 +109,7 @@
 		2A73F36D2BB57154007FE4A8 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2A73F36E2BB57166007FE4A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		2A73F3712BB57166007FE4A8 /* mul */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = mul; path = mul.lproj/MainMenu.xcstrings; sourceTree = "<group>"; };
+		2A8D08382BB8472D00FC5A05 /* sshtunnel.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = sshtunnel.html; sourceTree = "<group>"; };
 		2AA892D02BB6DF7800FE1A29 /* statusOrange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = statusOrange.png; sourceTree = "<group>"; };
 		2AA892D12BB6DF7800FE1A29 /* statusGreen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "statusGreen@2x.png"; sourceTree = "<group>"; };
 		2AA892D22BB6DF7800FE1A29 /* statusOrange@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "statusOrange@3x.png"; sourceTree = "<group>"; };
@@ -331,6 +333,7 @@
 		29B97314FDCFA39411CA2CEA /* SSHTunnel */ = {
 			isa = PBXGroup;
 			children = (
+				2A8D08382BB8472D00FC5A05 /* sshtunnel.html */,
 				2A42E2A22BB5578000D40D7D /* Assets.xcassets */,
 				029C399A0E5F9B92009B7688 /* SSHTunnelWorkaround */,
 				080E96DDFE201D6D7F000001 /* Classes */,
@@ -420,7 +423,7 @@
 				8D1107290486CEB800E47090 /* Resources */,
 				8D11072C0486CEB800E47090 /* Sources */,
 				8D11072E0486CEB800E47090 /* Frameworks */,
-				02886A400E5F7B4800E218C5 /* ShellScript */,
+				2A8D08372BB8451100FC5A05 /* Prepare Publishing */,
 			);
 			buildRules = (
 			);
@@ -479,6 +482,7 @@
 				2AA892E02BB6DF7800FE1A29 /* statusRed@3x.png in Resources */,
 				2AA892D92BB6DF7800FE1A29 /* statusOrange.png in Resources */,
 				022082A90E268E69004F2B5A /* Localizable.strings in Resources */,
+				2A8D08392BB8472D00FC5A05 /* sshtunnel.html in Resources */,
 				02F375720E5F0D5B00F23038 /* SSHShell.command in Resources */,
 				2AA892DE2BB6DF7800FE1A29 /* statusOrange@2x.png in Resources */,
 				029C39A60E5F9B92009B7688 /* SSHTunnelWorkaround in Resources */,
@@ -497,18 +501,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		02886A400E5F7B4800E218C5 /* ShellScript */ = {
+		2A8D08372BB8451100FC5A05 /* Prepare Publishing */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputFileListPaths = (
+			);
 			inputPaths = (
+			);
+			name = "Prepare Publishing";
+			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ \"$CONFIGURATION\" == \"Packaged\" -o \"$CONFIGURATION\" == \"Featured\" ]\nthen\n\tNAME=$PRODUCT_NAME\n\tPLISTPATH=`echo $CONFIGURATION_BUILD_DIR/$INFOPLIST_PATH | sed s/.plist//`\n\tVERSION=`defaults read $PLISTPATH CFBundleVersion`\n\tVOLNAME=${NAME}_V${VERSION}\n\n\trm ${CONFIGURATION_BUILD_DIR}/../Bundle/${VOLNAME}.dmg\n\n\tcp -r ${CONFIGURATION_BUILD_DIR}/${EXECUTABLE_NAME}.app ${CONFIGURATION_BUILD_DIR}/Package/\n\t\n\tcp -r `pwd`/{AUTHORS.txt,COPYING.txt,CHANGELOG.txt} ${CONFIGURATION_BUILD_DIR}/Package/\n\n\thdiutil create -fs HFS+ -srcfolder $CONFIGURATION_BUILD_DIR/Package -volname \"$VOLNAME\" \"$VOLNAME\"\n\n\t#if [ \"$CONFIGURATION\" == \"Featured\" ]\n\t#then\n\t#\tDATE=`date \"+%Y.%m.%d-%Hh%M\"`\n\t#\tmv ${VOLNAME}.dmg build/Bundle/\n\t#\tmv build/Bundle/${VOLNAME}.dmg build/Bundle/${VOLNAME}.${DATE}.dmg\n\t#\texpect -f SSHTunnelWorkaround/MakeFeaturedReleases/upload.sh \"build/Bundle/${VOLNAME}-${DATE}.dmg\"\n\t#\texit\n\t#fi\n\n\tmv `pwd`/${VOLNAME}.dmg ${CONFIGURATION_BUILD_DIR}/../Bundle/\nfi\n\n\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n#\nSSHTUNNEL_USER=$(id -un)\n\nif [ -d /Volumes/Homeshare/Xcode/SSHTunnel/upload ]; then\n    cp /Users/$SSHTUNNEL_USER/Documents/Xcode/SSHTunnel/sshtunnel.html /Volumes/Homeshare/Xcode/SSHTunnel/upload/\n    codesign --force --deep --sign - \"${TARGET_BUILD_DIR}\"/\"${PRODUCT_NAME}.app\"\n    ditto -c -k --sequesterRsrc --keepParent \"${TARGET_BUILD_DIR}\"/\"${PRODUCT_NAME}.app\" /Volumes/Homeshare/Xcode/SSHTunnel/upload/sshtunnel.zip\nfi\n\nif [ -d /Users/$SSHTUNNEL_USER/Desktop/\"${PRODUCT_NAME}.app\" ]; then\n  rm -rf /Users/$SSHTUNNEL_USER/Desktop/\"${PRODUCT_NAME}.app\"\nfi\n\ncp -a \"${TARGET_BUILD_DIR}\"/\"${PRODUCT_NAME}.app\" /Users/$SSHTUNNEL_USER/Desktop/.\ncodesign --force --deep --sign - /Users/$SSHTUNNEL_USER/Desktop/\"${PRODUCT_NAME}.app\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -613,6 +622,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				COMBINE_HIDPI_IMAGES = NO;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -624,14 +634,17 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = SSHTunnel_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SSHTunnel;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INSTALL_PATH = "$(HOME)/Applications";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@loader_path/../Frameworks",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
-				PRODUCT_BUNDLE_IDENTIFIER = "fr.antoinemercadal.${PRODUCT_NAME:identifier}";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MARKETING_VERSION = 2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.slsoft.SSHTunnel;
 				PRODUCT_NAME = SSHTunnel;
 				SDKROOT = macosx;
 			};
@@ -680,6 +693,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				COMBINE_HIDPI_IMAGES = NO;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -691,14 +705,17 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = SSHTunnel_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SSHTunnel;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INSTALL_PATH = "$(HOME)/Applications";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@loader_path/../Frameworks",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
-				PRODUCT_BUNDLE_IDENTIFIER = "fr.antoinemercadal.${PRODUCT_NAME:identifier}";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MARKETING_VERSION = 2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.slsoft.SSHTunnel;
 				PRODUCT_NAME = SSHTunnel;
 				SDKROOT = macosx;
 			};
@@ -711,6 +728,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				COMBINE_HIDPI_IMAGES = NO;
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = YES;
@@ -724,14 +742,17 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = SSHTunnel_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SSHTunnel;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INSTALL_PATH = "$(HOME)/Applications";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@loader_path/../Frameworks",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
-				PRODUCT_BUNDLE_IDENTIFIER = "fr.antoinemercadal.${PRODUCT_NAME:identifier}";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MARKETING_VERSION = 2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.slsoft.SSHTunnel;
 				PRODUCT_NAME = SSHTunnel;
 				SDKROOT = macosx;
 			};
@@ -744,6 +765,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				COMBINE_HIDPI_IMAGES = NO;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -755,14 +777,17 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = SSHTunnel_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SSHTunnel;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INSTALL_PATH = "$(HOME)/Applications";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@loader_path/../Frameworks",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
-				PRODUCT_BUNDLE_IDENTIFIER = "fr.antoinemercadal.${PRODUCT_NAME:identifier}";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MARKETING_VERSION = 2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.slsoft.SSHTunnel;
 				PRODUCT_NAME = SSHTunnel;
 				SDKROOT = macosx;
 			};

@@ -366,7 +366,8 @@
 
 - (IBAction) openMainWindow:(id)sender
 {
-	[mainApplicationWindow makeKeyAndOrderFront:nil];
+    [mainApplicationWindow makeKeyAndOrderFront:nil];
+    [NSApp activateIgnoringOtherApps:YES]; // Diese Zeile aktiviert die Anwendung und bringt das Fenster nach vorne
 }
 
 - (IBAction) closeMainWindow:(id)sender
@@ -394,6 +395,11 @@
 
 #pragma mark -
 #pragma mark View management
+
+
+- (IBAction)displayMainWindow:(id)sender {
+        [mainApplicationWindow makeKeyAndOrderFront:nil];
+}
 
 - (IBAction) displaySessionView:(id)sender
 {

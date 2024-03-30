@@ -162,10 +162,11 @@
 	// Do not ask me why NSAlertDefaultReturn doesn't work...
 	if (returnCode ==  1000)
 	{
-		NSTask *t = [[NSTask alloc] init];
-		[t setLaunchPath:@"/usr/bin/killall"];
-		[t setArguments:[NSArray arrayWithObject:@"ssh"]];
-		[t launch];
+        NSTask *t = [[NSTask alloc] init];
+        [t setLaunchPath:@"/usr/bin/pkill"];
+        [t setArguments:@[@"-f", @"/usr/bin/expect", @"-f"]];
+        [t launch];
+
 	}
 }
 
@@ -332,7 +333,7 @@
 - (IBAction) killAllSSH:(id)sender
 {
 	[mainApplicationWindow runSheetAlertTitle:NSLocalizedString(@"Kill all SSH", nil) 
-									  message:NSLocalizedString(@"You are going to shut down all ssh sessions, even ones that are not managed by SSHTunnel.  Are you sure?", nil)
+									  message:NSLocalizedString(@"You are going to shut down all ssh sessions. Are you sure?", nil)
 								  firstButton:NSLocalizedString(@"OK", nil)
 								 secondButton:NSLocalizedString(@"Cancel", nil)
 										 from:self

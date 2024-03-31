@@ -2857,6 +2857,30 @@
         }
       }
     },
+    "ieR-l3-te3.title" : {
+      "comment" : "Class = \"NSButtonCell\"; title = \"Button\"; ObjectID = \"ieR-l3-te3\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Button"
+          }
+        }
+      }
+    },
+    "Ldt-yY-hDl.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Hide Mainwindow at Start :\"; ObjectID = \"Ldt-yY-hDl\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Hide Mainwindow at Start :"
+          }
+        }
+      }
+    },
     "xf3-25-58D.title" : {
       "comment" : "Class = \"NSTextFieldCell\"; title = \"Leave Password Field empty if you are using SSH Key in ~/.ssh Directory.\"; ObjectID = \"xf3-25-58D\";",
       "extractionState" : "extracted_with_value",

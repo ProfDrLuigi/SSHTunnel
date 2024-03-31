@@ -46,6 +46,7 @@
 	[alert beginSheetModalForWindow:self 
 					  modalDelegate:sender 
 					 didEndSelector:NSSelectorFromString(sel) 
-						contextInfo:nil];
+                        contextInfo:nil];
+    
 }
 @end

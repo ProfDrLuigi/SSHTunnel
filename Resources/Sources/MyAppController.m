@@ -50,7 +50,19 @@
 	
 	[[NSUserDefaults standardUserDefaults] registerDefaults:initialValues];
 	NSFileManager *f = [NSFileManager defaultManager];
+    
+    // Überprüfen, ob der Schlüssel existiert
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"hideMainWindowOnStart"]) {
+        // Der Schlüssel existiert nicht, also legen wir ihn an
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"hideMainWindowOnStart"];
+        [[NSUserDefaults standardUserDefaults] synchronize]; // Wichtig, um die Änderungen zu speichern
+    }
 	
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"hideMainWindowOnStart"]) {
+        
+        
+    }
+    
 	if ([f fileExistsAtPath:[[NSUserDefaults standardUserDefaults] stringForKey:@"applicationSupportFolder"]] == NO)
 		[self prepareApplicationSupports:f];
 	
@@ -196,6 +208,14 @@
 			if ([o autostart] == YES)
 				[o openTunnel];
 		}	
+    // Den Wert des Schlüssels abrufen
+    BOOL hideMainWindowOnStart = [[NSUserDefaults standardUserDefaults] boolForKey:@"hideMainWindowOnStart"];
+
+    // Überprüfen, ob der Wert true ist
+    if (hideMainWindowOnStart) {
+        // Wenn ja, mainApplicationWindow ausblenden
+        [mainApplicationWindow orderOut:nil];
+    }
 }
 
 - (void) prepareStatusBarMenu

@@ -103,6 +103,18 @@
         }
       }
     },
+    "30y-lD-AGA.title" : {
+      "comment" : "Class = \"NSMenuItem\"; title = \"Check for Updates...\"; ObjectID = \"30y-lD-AGA\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Check for Updates..."
+          }
+        }
+      }
+    },
     "56.title" : {
       "comment" : "Class = \"NSMenuItem\"; title = \"SSH Tunnel\"; ObjectID = \"56\";",
       "extractionState" : "extracted_with_value",

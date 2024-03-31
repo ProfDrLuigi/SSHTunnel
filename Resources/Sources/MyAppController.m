@@ -571,16 +571,25 @@
 }
 
 
+
 #pragma mark -
 #pragma mark Application status managers
 
 - (void) applicationWillTerminate: (NSNotification *) notification
 {
 	[self closeAllSession:nil];
-
+    
+    printf("see you");
+    
 	[serverController performSaveProcess:nil];
 	[serviceController performSaveProcess:nil];
 	[sessionController performSaveProcess:nil];
+    
+    NSTask *t = [[NSTask alloc] init];
+    [t setLaunchPath:@"/usr/bin/pkill"];
+    [t setArguments:@[@"-f", @"/usr/bin/expect", @"-f"]];
+    [t launch];
+    
 }
 
 - (BOOL)applicationShouldHandleReopen:(NSApplication *)theApplication hasVisibleWindows:(BOOL)flag

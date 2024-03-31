@@ -37,7 +37,7 @@
             <rect key="screenRect" x="0.0" y="0.0" width="2056" height="1285"/>
             <value key="minSize" type="size" width="637" height="325"/>
             <value key="maxSize" type="size" width="864" height="674"/>
-            <view key="contentView" focusRingType="none" misplaced="YES" id="372">
+            <view key="contentView" focusRingType="none" id="372">
                 <rect key="frame" x="0.0" y="0.0" width="685" height="496"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             </view>
@@ -1827,10 +1827,16 @@ CA
                         <action selector="displayPreferenceView:" target="461" id="7ea-aT-tAf"/>
                     </connections>
                 </menuItem>
+                <menuItem title="Check for Updates..." id="30y-lD-AGA">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="checkForUpdates:" target="PHc-Ps-NsJ" id="oau-JY-Gfn"/>
+                    </connections>
+                </menuItem>
                 <menuItem title="Quit SSHTunnel" id="3162">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
-                        <action selector="stop:" target="-3" id="3177"/>
+                        <action selector="terminate:" target="-1" id="wpy-Tb-QOM"/>
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="3153"/>
@@ -1847,7 +1853,7 @@ CA
                     </connections>
                 </menuItem>
             </items>
-            <point key="canvasLocation" x="-831" y="-418"/>
+            <point key="canvasLocation" x="-701" y="-1134"/>
         </menu>
         <customView id="3319" userLabel="PreferenceView">
             <rect key="frame" x="0.0" y="0.0" width="566" height="321"/>

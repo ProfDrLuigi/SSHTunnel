@@ -571,9 +571,55 @@
 }
 
 
-
 #pragma mark -
 #pragma mark Application status managers
+
+
+- (IBAction)quitApp:(id)sender {
+    
+    BOOL alertDisabled = [[NSUserDefaults standardUserDefaults] boolForKey:@"disableQuitAlert"];
+       if (!alertDisabled) {
+           NSAlert *alert = [[NSAlert alloc] init];
+           [alert setMessageText:NSLocalizedString(@"You quit the existing tunnels too by quitting the Application. Wanna quit really?", nil)];
+           [alert addButtonWithTitle:NSLocalizedString(@"Yes", nil)];
+           [alert addButtonWithTitle:NSLocalizedString(@"Cancel", nil)];
+
+           NSButton *checkbox = [[NSButton alloc] initWithFrame:NSMakeRect(0, 0, 200, 24)];
+           [checkbox setTitle:NSLocalizedString(@"Don't show again", nil)];
+           [checkbox setButtonType:NSButtonTypeSwitch];
+           [checkbox setState:NSControlStateValueOff];
+
+           [alert setAccessoryView:checkbox];
+
+           NSInteger buttonClicked = [alert runModal];
+
+           if (buttonClicked == NSAlertFirstButtonReturn) {
+               // User chose "Yes"
+               NSLog(@"User chose Yes");
+               NSTask *t = [[NSTask alloc] init];
+               [t setLaunchPath:@"/usr/bin/pkill"];
+               [t setArguments:@[@"-f", @"/usr/bin/expect", @"-f"]];
+               [t launch];
+
+               [serverController performSaveProcess:nil];
+               [serviceController performSaveProcess:nil];
+               [sessionController performSaveProcess:nil];
+
+               [self closeAllSession:nil];
+           } else {
+               // User chose "No"
+               NSLog(@"User chose No");
+               return;
+           }
+
+           if ([checkbox state] == NSControlStateValueOn) {
+               [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"disableQuitAlert"];
+           }
+       }
+
+       [[NSApplication sharedApplication] terminate:sender];
+    
+}
 
 - (void) applicationWillTerminate: (NSNotification *) notification
 {
@@ -584,11 +630,6 @@
 	[serverController performSaveProcess:nil];
 	[serviceController performSaveProcess:nil];
 	[sessionController performSaveProcess:nil];
-    
-    NSTask *t = [[NSTask alloc] init];
-    [t setLaunchPath:@"/usr/bin/pkill"];
-    [t setArguments:@[@"-f", @"/usr/bin/expect", @"-f"]];
-    [t launch];
     
 }
 

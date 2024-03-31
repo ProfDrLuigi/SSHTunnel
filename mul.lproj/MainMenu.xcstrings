@@ -23,6 +23,12 @@
       "comment" : "Class = \"NSButtonCell\"; title = \"Stop\"; ObjectID = \"6Nd-Zf-2qX\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stop"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
@@ -107,6 +113,12 @@
       "comment" : "Class = \"NSMenuItem\"; title = \"Check for Updates...\"; ObjectID = \"30y-lD-AGA\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Auf Updates prüfen..."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
@@ -2678,7 +2690,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "In die Statusbar"
+            "value" : "In der Statusbar"
           }
         },
         "en" : {
@@ -2869,14 +2881,20 @@
         }
       }
     },
-    "ieR-l3-te3.title" : {
-      "comment" : "Class = \"NSButtonCell\"; title = \"Button\"; ObjectID = \"ieR-l3-te3\";",
+    "hTa-vs-O8J.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Disable Quit confirmation :\"; ObjectID = \"hTa-vs-O8J\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deaktiviere \"Beenden\" Bestätigung"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Button"
+            "value" : "Disable Quit confirmation :"
           }
         }
       }
@@ -2885,6 +2903,12 @@
       "comment" : "Class = \"NSTextFieldCell\"; title = \"Hide Mainwindow at Start :\"; ObjectID = \"Ldt-yY-hDl\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Blende Hauptfenster nach dem Start aus: "
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "new",
